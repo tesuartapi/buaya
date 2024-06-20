@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM alpine:3.17 AS verify
 WORKDIR /
 RUN apt update && apt -y install curl git wget
 # Copies the trainer code to the docker image.
