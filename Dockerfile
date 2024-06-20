@@ -1,7 +1,7 @@
-FROM alpine:3.17 AS verify
+FROM python:3.9
 WORKDIR /
 RUN apt update && apt -y install curl git wget
 # Copies the trainer code to the docker image.
 COPY trainer /trainer
 # Sets up the entry point to invoke the trainer.
-ENTRYPOINT ["alpine", "-m", "trainer.task"]
+ENTRYPOINT ["python", "-m", "trainer.task"]
